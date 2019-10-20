@@ -41,7 +41,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	// se configura el tiempo de vida del token en segundos
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-		clients.inMemory().withClient("web-scm").secret(passwordEncoder.encode("12345"))
+		clients.inMemory().withClient("reciclapp").secret(passwordEncoder.encode("12345"))
 				.scopes("read", "write").authorizedGrantTypes("password", "refresh_token")
 				.accessTokenValiditySeconds(10800).refreshTokenValiditySeconds(10800);
 	}

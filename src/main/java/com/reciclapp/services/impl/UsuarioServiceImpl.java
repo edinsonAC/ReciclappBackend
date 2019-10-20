@@ -3,6 +3,7 @@ package com.reciclapp.services.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.reciclapp.dao.IUsuarioDAO;
@@ -14,6 +15,9 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
 	@Autowired
 	private IUsuarioDAO usuarioDao;
+
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
 
 	@Override
 	public List<Usuario> listarUsuarios() {
@@ -30,6 +34,8 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	@Override
 	public Usuario registrarUsuario(Usuario user) {
 		// TODO Auto-generated method stub
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
+
 		return usuarioDao.save(user);
 	}
 
@@ -37,6 +43,12 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	public Usuario editarUsuario(Usuario user) {
 		// TODO Auto-generated method stub
 		return usuarioDao.save(user);
+	}
+
+	@Override
+	public Usuario buscarUsuarioPorId(long id) {
+		// TODO Auto-generated method stub
+		return usuarioDao.findById(id).orElse(null);
 	}
 
 }

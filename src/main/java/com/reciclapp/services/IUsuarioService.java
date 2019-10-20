@@ -14,6 +14,7 @@ public interface IUsuarioService {
 	
 	Usuario editarUsuario(Usuario user);
 	
+	Usuario buscarUsuarioPorId(long id);
 	
 	
 }
