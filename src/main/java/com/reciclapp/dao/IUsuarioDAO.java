@@ -3,7 +3,6 @@ package com.reciclapp.dao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.reciclapp.entitys.Persona;
 import com.reciclapp.entitys.Usuario;
 
 public interface IUsuarioDAO extends JpaRepository<Usuario, Long> {

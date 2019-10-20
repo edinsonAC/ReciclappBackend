@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.reciclapp.dao.IUsuarioDAO;
-import com.reciclapp.entitys.Persona;
 import com.reciclapp.entitys.Usuario;
 import com.reciclapp.services.IUsuarioService;
 
@@ -26,6 +25,18 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	public Usuario findByEmail(String username) {
 		// TODO Auto-generated method stub
 		return usuarioDao.findByEmail(username);
+	}
+
+	@Override
+	public Usuario registrarUsuario(Usuario user) {
+		// TODO Auto-generated method stub
+		return usuarioDao.save(user);
+	}
+
+	@Override
+	public Usuario editarUsuario(Usuario user) {
+		// TODO Auto-generated method stub
+		return usuarioDao.save(user);
 	}
 
 }

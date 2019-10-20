@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 import javax.persistence.*;
 
 /**
- * The persistent class for the asignatura database table.
+ * The persistent class for the aviso_publicitario database table.
  * 
  */
 @Entity
