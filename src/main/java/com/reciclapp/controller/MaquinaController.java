@@ -36,6 +36,7 @@ public class MaquinaController {
 		return this.maquinaService.buscarMaquinaPorId(id);
 	}
 
+
 	@PostMapping("/crearMaquina")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Maquina create(@RequestBody Maquina maquina) {
